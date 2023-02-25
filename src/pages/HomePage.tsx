@@ -41,7 +41,7 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -85,4 +85,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomePage;
