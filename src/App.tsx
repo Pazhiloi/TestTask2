@@ -5,6 +5,7 @@ import Header from './components/Header';
 import HomePage from "./pages/HomePage";
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
+import NewsPage from "./pages/NewsPage";
 function App() {
   return (
     <div>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/news" element={<NewsPage />} />
       </Routes>
       <Footer/>
     </div>
