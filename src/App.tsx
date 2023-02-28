@@ -8,7 +8,7 @@ import ProfilePage from './pages/ProfilePage';
 import NewsPage from "./pages/NewsPage";
 function App() {
   return (
-    <div>
+    <div className='page-container'>
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage />} />

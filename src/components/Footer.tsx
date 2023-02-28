@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.common.white,
       marginTop: "auto",
-      padding: theme.spacing(3),
+      padding: theme.spacing(4),
     },
     text: {
       textAlign: "center",
@@ -20,13 +20,15 @@ const Footer: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <footer className={classes.root}>
-      <Container maxWidth="md">
-        <Typography variant="body1" className={classes.text}>
-          © 2023 - My Website
-        </Typography>
-      </Container>
-    </footer>
+    <div className="footer-container">
+      <footer className={classes.root}>
+        <Container maxWidth="md">
+          <Typography variant="body1" className={classes.text}>
+            © 2023 - My Website
+          </Typography>
+        </Container>
+      </footer>
+    </div>
   );
 };
 
