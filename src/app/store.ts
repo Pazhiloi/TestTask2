@@ -4,22 +4,23 @@ import storage from "redux-persist/lib/storage";
 import userReducer from '../features/user/userSlice';
 import newsReducer from "../features/news/newsSlice";
 
-
-const persistConfig = {
-  key: "root",
+const userPersistConfig = {
+  key: "user",
   storage,
 };
-const persistedReducer = persistReducer(
-  persistConfig,
-  combineReducers({
-    user: userReducer,
-    news: newsReducer,
-  })
-);
+
+
+const persistedUserReducer = persistReducer(userPersistConfig, userReducer);
 
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: combineReducers({
+    user: persistedUserReducer,
+    news: newsReducer,
+  }),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      serializableCheck: false,
+  }),
 });
 
 export const persistor = persistStore(store);

@@ -28,18 +28,22 @@ const initialState: NewsState = {
 export const fetchPosts = createAsyncThunk(
   "news/fetchPosts",
   async (page: number) => {
-    const response = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`
-    );
-    return response.data;
+    try {
+      const response = await axios.get(
+        `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=1`
+      );
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 );
 
 export const deletePost = createAsyncThunk(
   "news/deletePost",
   async (id: number) => {
-    await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
-    return id;
+       await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
+       return id;
   }
 );
 

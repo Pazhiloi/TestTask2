@@ -47,7 +47,7 @@ const News = () => {
   const status = useAppSelector(selectStatus);
   const error = useAppSelector(selectError);
   const nextPage = useAppSelector(selectNextPage);
-
+  
   useEffect(() => {
     dispatch(fetchPosts(1));
   }, [dispatch]);
@@ -63,8 +63,8 @@ const News = () => {
   };
 
   const renderPosts = () => {
-    return posts.map((post) => (
-      <Grid item xs={12} key={post.id}>
+    return posts.map((post: any, i: number) => (
+      <Grid item xs={12} key={post.id + i}>
         <Paper className={classes.paper}>
           <Typography variant="h6" gutterBottom>
             {post.title}

@@ -32,3 +32,8 @@ code {
   right: 0;
   height: 80px;
 }
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
