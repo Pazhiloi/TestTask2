@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Button,
@@ -11,9 +11,10 @@ import {
   FormHelperText,
 } from "@material-ui/core";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { logIn, selectError, selectUser } from "../features/user/userSlice";
+import { useAppSelector } from "../app/hooks";
+import { selectError, selectUser } from "../features/user/userSlice";
 import { useNavigate } from "react-router-dom";
+import useForm from "../utils/loginUtils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,40 +49,29 @@ const useStyles = makeStyles((theme) => ({
 
 
 const LoginForm: React.FC = () => {
-
   const classes = useStyles();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const error = useAppSelector(selectError);
   const auth = useAppSelector(selectUser);
-  const dispatch = useAppDispatch();
   const navigate = useNavigate()
+  // below we get this functions from useForm hook
+  const {
+    handleUsernameChange,
+    handlePasswordChange,
+    handleShowPasswordClick,
+    handleFormSubmit,
+    username,
+    password,
+    showPassword,
+  } = useForm();
+
   useEffect(() => {
+    // if auth is true we redirect user to the profile page
     if (auth) {
       navigate('/profile')
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auth])
   
-
-  const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
-  };
-
-  const handleShowPasswordClick = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    dispatch(logIn({ username, password }));
-    setUsername("");
-    setPassword("");
-  };
 
   return (
     <div className={classes.root}>

@@ -7,6 +7,7 @@ const useHeaderHelper = () => {
   const { t } = useTranslation();
   const auth = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
+
   // Function below (checkRoute) decide what route will be depends on authorization state
   const checkRoute = () => {
     if (auth) {
@@ -23,6 +24,7 @@ const useHeaderHelper = () => {
       );
     }
   };
+
   // Function below renders logout element if user  is already registered
   const renderLogout = () => {
     if (auth) {
@@ -40,6 +42,7 @@ const useHeaderHelper = () => {
       return "";
     }
   };
+  
   // Below we return this two functions to then restructure and get them  from our useHeaderHelper hook
   return { renderLogout, checkRoute };
 };
