@@ -18,9 +18,7 @@ const Header: React.FC = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
-          <Link  to={"/"}>
-            {t("menu.home")}
-          </Link>
+          <Link to={"/"}>{t("menu.home")}</Link>
         </Typography>
         <Button component={Link} to="/news" color="inherit">
           {t("menu.news")}

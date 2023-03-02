@@ -14,8 +14,8 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate  persistor={persistor}>
-        <BrowserRouter>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter basename="/TestTask2">
           <App />
         </BrowserRouter>
       </PersistGate>
