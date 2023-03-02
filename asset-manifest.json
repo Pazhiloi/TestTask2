@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "https://pazhiloi.github.io/TestTask2/static/css/main.090964c7.css",
-    "main.js": "https://pazhiloi.github.io/TestTask2/static/js/main.0d604a2a.js",
+    "main.js": "https://pazhiloi.github.io/TestTask2/static/js/main.81c0b046.js",
     "index.html": "https://pazhiloi.github.io/TestTask2/index.html",
     "main.090964c7.css.map": "https://pazhiloi.github.io/TestTask2/static/css/main.090964c7.css.map",
-    "main.0d604a2a.js.map": "https://pazhiloi.github.io/TestTask2/static/js/main.0d604a2a.js.map"
+    "main.81c0b046.js.map": "https://pazhiloi.github.io/TestTask2/static/js/main.81c0b046.js.map"
   },
   "entrypoints": [
     "static/css/main.090964c7.css",
-    "static/js/main.0d604a2a.js"
+    "static/js/main.81c0b046.js"
   ]
 }
